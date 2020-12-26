@@ -1,1 +1,201 @@
-{}
+{
+  "Import: tuya": {
+    "prefix": "imty",
+    "body": "import { $1 } from 'tuya-panel-kit';",
+  },
+  // Basic
+  "BrickButton 块状按钮": {
+    "prefix": "ty-brickbutton",
+    "body": [
+      "<BrickButton text=\"${1:loading}\" loading={${2|true,false|}} />"
+    ],
+    "description": "BrickButton 是在 Button 功能基础上进行的丰富"
+  },
+  "Button 按钮": {
+    "prefix": "ty-button",
+    "body": [
+      "<Button text=\"${1:点我一下}\" onPress={ $2 }/>"
+    ],
+    "description": "Button 用于一些纯文本、图片、Icon 等需要点击的场合"
+  },
+  "Iconfont 图标": {
+    "prefix": "ty-iconfont",
+    "body": "<IconFont name=\"${1:power}\" color=\"${2:red}\" />",
+    "description": "description"
+  },
+  "Motion.Fade 淡入淡出": {
+    "prefix": "ty-motion-fade",
+    "body": [
+      "<Motion.Fade",
+      "  show={$1}",
+      "  onHide={() =>{",
+      "    $1",
+      "  }}",
+      "/>"
+    ],
+    "description": "Motion 是一个用于丰富组件动作的组件"
+  },
+  "Motion.PullUp 上拉下滑": {
+    "prefix": "ty-motion-fade",
+    "body": [
+      "<Motion.PullUp",
+      "  show={$1}",
+      "  onHide={() =>{",
+      "    $1",
+      "  }}",
+      "/>"
+    ],
+    "description": "Motion 是一个用于丰富组件动作的组件"
+  },
+  "Motion.ScaleFadeIn 放大淡入/缩小淡出": {
+    "prefix": "ty-motion-scaleFadeIn",
+    "body": [
+      "<Motion.ScaleFadeIn",
+      "  show={$1}",
+      "  onHide={() =>{",
+      "    $1",
+      "  }}",
+      "/>"
+    ],
+    "description": "Motion 是一个用于丰富组件动作的组件"
+  },
+  "Motion.ScalePullDown 放大淡入/下滑淡出": {
+    "prefix": "ty-motion-scalePullDown",
+    "body": [
+      "<Motion.ScalePullDown",
+      "  show={$1}",
+      "  onHide={() =>{",
+      "    $2",
+      "  }}",
+      "/>"
+    ],
+    "description": "Motion 是一个用于丰富组件动作的组件"
+  },
+  "Motion.PushDown 下拉上推": {
+    "prefix": "ty-motion-scalePullDown",
+    "body": [
+      "<Motion.PushDown",
+      "  show={$1}",
+      "  onHide={() =>{",
+      "    $2",
+      "  }}",
+      "/>"
+    ],
+    "description": "Motion 是一个用于丰富组件动作的组件"
+  },
+  "Motion.Toast 无操作放大淡入/缩小淡出": {
+    "prefix": "ty-motion-scalePullDown",
+    "body": [
+      "<Motion.Toast",
+      "  show={$1}",
+      "  onHide={() =>{",
+      "    $2",
+      "  }}",
+      "/>"
+    ],
+    "description": "Motion 是一个用于丰富组件动作的组件"
+  },
+  "TYText 文字": {
+    "prefix": "ty-text",
+    "body": [
+      "<TYText text=\"${1:我是涂鸦er}\" color=\"${2:red}\" weight=\"${3:bold}\" size={${4:24}} />",
+    ],
+    "description": "TYText 在 Text 组件上进行了一层封装，保证 IOS 与 Android 表征一致"
+  },
+  "UnitText 字体单位": {
+    "prefix": "ty-unitText",
+    "body": [
+      "<UnitText unit=\"${1:%}\" unitColor=\"${2:green}\" />",
+    ],
+    "description": "UnitText 可用于显示一些加粗的展示型文字类型"
+  },
+  // Data entry
+  "Checkbox 选择框": {
+    "prefix": "ty-checkbox",
+    "body": [
+      "<Checkbox checked={${2:true}} onChange={checked => {$3}}>",
+      "  ${1:复选框}",
+      "</Checkbox>"
+    ],
+    "description": "单选框或多选框"
+  },
+  "DatePicker 日期选择器": {
+    "prefix": "ty-datePicker",
+    "body": [
+      "<DatePicker",
+      "  defaultDate={${1:new Date()}}",
+      "  onDateChange={date => console.log(date)}",
+      "/>"
+    ],
+    "description": "DatePicker 是一个灵活的支持多种模式的时间日期选择组件"
+  },
+  "PickerView 选择器": {
+    "prefix": "ty-picker",
+    "body": [
+      "<Picker",
+      "  style={{",
+      "    width: 375,",
+      "    height: 225,",
+      "  }}",
+      "  onValueChange={value => console.log(value)}",
+      ">",
+      "  {['杭州', '温州', '宁波', '绍兴', '嵊州', '金华'].map(value => (",
+      "    <Picker.Item key={value} value={value} label={value} />",
+      "  ))}",
+      "</Picker>"
+    ],
+    "description": "PickerView 是一个多选一的容器视图，请务必给 PickerView 指定一个宽高，否则无法渲染。"
+  },
+  "Slider.Horizontal 滑动选择器": {
+    "prefix": "ty-slider-horizontal",
+    "body": [
+      "<Slider.Horizontal",
+      "  style={{ width: 295 }}",
+      "  maximumValue={100}",
+      "  minimumValue={0}",
+      "  maximumTrackTintColor=\"rgba(0, 0, 0, 0.1)\"",
+      "  minimumTrackTintColor=\"#4397D7\"",
+      "  onSlidingComplete={v => console.log(v)}",
+      "/>"
+    ],
+    "description": "Slider 是滑动选择器，一般在面板内部用于处理可上报下发的数值型 dp 点"
+  },
+  "Slider.Vertical 滑动选择器": {
+    "prefix": "ty-slider-vertical",
+    "body": [
+      "<Slider.Vertical",
+      "  style={{ height: 200 }}",
+      "  minimumValue={0}",
+      "  maximumValue={100}",
+      "  minimumTrackTintColor=\"#4A90E2\"",
+      "  onSlidingComplete={v => console.log(v)}",
+      "/>"
+    ],
+    "description": "Slider 是滑动选择器，一般在面板内部用于处理可上报下发的数值型 dp 点"
+  },
+  "Stepper 步进器": {
+    "prefix": "ty-stepper",
+    "body": [
+      "<Stepper buttonType=\"${1| ellipse,triangle}\" value={${2:0}} editable={${3|true,false|}} />"
+    ],
+    "description": "Stepper 由增加按钮、减少按钮和输入框组成，用于在一定范围内输入、调整数字。"
+  },
+  "SwitchButton 开关": {
+    "prefix": "ty-switchButton",
+    "body": [
+      "<SwitchButton",
+      "  onValueChange={v => console.log(v)}",
+      "/>"
+    ],
+    "description": "SwitchButton 是一个开关组件"
+  },
+  "TimerPicker 时间段选择器": {
+    "prefix": "ty-switchButton",
+    "body": [
+      "<SwitchButton",
+      "  onValueChange={v => console.log(v)}",
+      "/>"
+    ],
+    "description": "TimerPicker 是一个时间段选择组件"
+  }
+}
