@@ -78,5 +78,5 @@ enjoy it!!!
 | ty-sectionList             | TYSectionList 分组列表                                       |
 | ty-controllerBar           | ControllerBar 底部栏                                         |
 | ty-tab                     | Tab 标签栏                                                   |
-| tuya-tabBar                | TabBar 标签栏拆分版                                          |
+| ty-tabBar                  | TabBar 标签栏拆分版                                          |
 | ty-tabs                    | Tabs 纯手势标签栏                                            |
