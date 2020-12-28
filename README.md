@@ -6,11 +6,13 @@ This is Code Snippets of tuya-panel-kit for VS Code.
 
 The plugin is still under development, you can use it offline.
 
-1、download the vsix file:
+1、click to download the [tuya-panel-kit-snippets-0.0.1.vsix](https://github.com/youngjuning/tuya-panel-kit-vscode-snippets/releases/download/v0.0.1/tuya-panel-kit-snippets-0.0.1.vsix) file.
 
 2、 Install from vsix:
 
 ![](https://i.loli.net/2020/12/28/pTuQyvhWCDa86Mk.png)
+
+enjoy it!!!
 
 ## snippets
 
