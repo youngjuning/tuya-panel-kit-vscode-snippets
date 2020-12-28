@@ -505,7 +505,7 @@
     "description": "通知栏，可以显示成功、警告、错误此类三种信息"
   },
   "Popup.countdown 倒计时弹出层": {
-    "prefix": "tuya-popup-countdown",
+    "prefix": "ty-popup-countdown",
     "body": [
       "Popup.countdown({",
       "  title: '倒计时',",
@@ -523,7 +523,7 @@
     "description": "倒计时弹出层"
   },
   "Popup.datePicker 日期选择弹出层": {
-    "prefix": "tuya-popup-datePicker",
+    "prefix": "ty-popup-datePicker",
     "body": [
       "Popup.datePicker({",
       "  title: '生日',",
@@ -545,7 +545,7 @@
     "description": "日期选择弹出层"
   },
   "Popup.timerPicker 时间段选择": {
-    "prefix": "tuya-popup-timerPicker",
+    "prefix": "ty-popup-timerPicker",
     "body": [
       "Popup.timerPicker({",
       "  title: '时间段选择',",
@@ -564,7 +564,7 @@
     "description": "时间段选择"
   },
   "Popup.numberSelector 数值选择弹出层": {
-    "prefix": "tuya-popup-numberSelector",
+    "prefix": "ty-popup-numberSelector",
     "body": [
       "Popup.numberSelector({",
       "  title: '温度调节 (℃)',",
@@ -582,7 +582,7 @@
     "description": "数值选择弹出层"
   },
   "Popup.list 列表选择弹出层": {
-    "prefix": "tuya-popup-list",
+    "prefix": "ty-popup-list",
     "body": [
       "Popup.list({",
       "  type: '${1|radio,switch|}',",
@@ -623,7 +623,7 @@
     "description": "列表选择弹出层"
   },
   "Popup.picker Picker 选择弹出层": {
-    "prefix": "tuya-popup-picker",
+    "prefix": "ty-popup-picker",
     "body": [
       "Popup.picker({",
       "  dataSource: [",
@@ -651,7 +651,7 @@
     "description": "Picker 选择弹出层"
   },
   "Popup.custom 自定义弹出层": {
-    "prefix": "tuya-popup-custom",
+    "prefix": "ty-popup-custom",
     "body": [
       "Popup.custom({",
       "  content: (",
@@ -678,7 +678,7 @@
     "description": "自定义弹出层"
   },
   "Toast 弹出层": {
-    "prefix": "tuya-popup-toast",
+    "prefix": "ty-popup-toast",
     "body": [
       "Popup.toast({",
       "  message: 'I am Toast',",
@@ -751,7 +751,7 @@
   },
   // Presentation
   "Carousel 轮播": {
-    "prefix": "tuya-carousel",
+    "prefix": "ty-carousel",
     "body": [
       "<Carousel",
       "  style={{ height: 200 }}",
@@ -774,14 +774,14 @@
     "description": "Carousel 是一个轮播图组件"
   },
   "CircleView 圆形视图": {
-    "prefix": "tuya-circleView",
+    "prefix": "ty-circleView",
     "body": [
       "<CircleView radius={30} color=\"#ff0\" borderWidth={4} borderColor=\"#00f\" />"
     ],
     "description": "CircleView 为圆形视图"
   },
   "Collapsible 折叠": {
-    "prefix": "tuya-collapsible",
+    "prefix": "ty-collapsible",
     "body": [
       "<Collapsible",
       "  collapsed={${1:collapsed}}",
@@ -818,14 +818,14 @@
     "description": "用于展示一个折叠下拉的动画效果"
   },
   "Divider 分割线": {
-    "prefix": "tuya-divider",
+    "prefix": "ty-divider",
     "body": [
       "<Divider color=\"red\" width={300} />"
     ],
     "description": "Divider 分割线"
   },
   "LinearGradient 垂直两段渐变": {
-    "prefix": "tuya-linearGradient-verticle",
+    "prefix": "ty-linearGradient-verticle",
     "body": [
       "<LinearGradient",
       "  gradientId=\"Gradient1\"",
@@ -850,7 +850,7 @@
     "description": "垂直两段渐变"
   },
   "LinearGradient 斜向三段渐变": {
-    "prefix": "tuya-linearGradient-oblique",
+    "prefix": "ty-linearGradient-oblique",
     "body": [
       "<LinearGradient",
       "  gradientId=\"Gradient2\"",
@@ -871,7 +871,7 @@
     "description": "斜向三段渐变"
   },
   "Progress 进度条": {
-    "prefix": "tuya-progress",
+    "prefix": "ty-progress",
     "body": [
       "<Progress",
       "  foreColor={{",
@@ -890,7 +890,7 @@
     "description": "一个常用的组件，可以手势控制当前进度，也可仅作展示作用"
   },
   "RadialGradient 径向渐变": {
-    "prefix": "tuya-radialGradient",
+    "prefix": "ty-radialGradient",
     "body": [
       "<RadialGradient",
       "  gradientId=\"Gradient1\"",
@@ -918,7 +918,7 @@
     "description": "RadialGradient 径向渐变"
   },
   "RotationView 旋转视图": {
-    "prefix": "tuya-rotationView",
+    "prefix": "ty-rotationView",
     "body": [
       "<RotationView",
       "  style={{ width: 160, height: 160, marginLeft: 100, marginTop: 40 }}",
@@ -939,14 +939,14 @@
     "description": "RotationView 封装了需要旋转动画的视图容器"
   },
   "TYFlatList 列表": {
-    "prefix": "tuya-flatList",
+    "prefix": "ty-flatList",
     "body": [
       "<TYFlatList data={${1:[]}} />"
     ],
     "description": "基于 RN 自带的 FlatList 组件做了一层简单的封装"
   },
   "TYListItem 列表项": {
-    "prefix": "tuya-listItem",
+    "prefix": "ty-listItem",
     "body": [
       "<TYListItem",
       "  theme={{",
@@ -964,10 +964,87 @@
     "description": "TYListItem 是一个列表项组件"
   },
   "TYSectionList 分组列表": {
-    "prefix": "tuya-sectionList",
+    "prefix": "ty-sectionList",
     "body": [
       "<TYSectionList sections={[]} />"
     ],
     "description": "基于 RN 自带的 SectionList 组件做了一层简单的封装"
+  },
+  // Navigation
+  "ControllerBar 底部栏": {
+    "prefix": "ty-controllerBar",
+    "body": [
+      "<ControllerBar.Group type=\"${1|divide,swiper|}\">",
+      "  <ControllerBar",
+      "    size={44}",
+      "    button={[",
+      "      { text: '1', type: 'primary' },",
+      "      { text: '2', type: 'primary' },",
+      "    ]}",
+      "  />",
+      "  <ControllerBar",
+      "    size={44}",
+      "    button={[",
+      "      { text: '3', type: 'primary' },",
+      "      { text: '4', type: 'primary' },",
+      "    ]}",
+      "  />",
+      "</ControllerBar.Group>"
+    ],
+    "description": "ControllerBar 是有着一个或以上按钮的控制栏"
+  },
+  "Tab 标签栏": {
+    "prefix": "ty-tab",
+    "body": [
+      "<Tab",
+      "  animated={true}",
+      "  onChange={value => console.log(value)}",
+      "  tabsContainerStyle={{",
+      "    height: 60,",
+      "    width: 375,",
+      "    alignItems: 'center',",
+      "    justifyContent: 'center',",
+      "  }}",
+      "  style={{ backgroundColor: '#fff' }}",
+      "  tabBarBackgroundColor=\"#e5e5e5\"",
+      "  tabTextStyle={{ fontSize: 16 }}",
+      "  >",
+      "  {['Tab 1', 'Tab 2', 'Tab 3', 'Tab 4'].map((item, idx) => (",
+      "    <Tab.TabPane key={`${item}`} tab={`${item}`}>",
+      "      <View style={contentStyle}>",
+      "        <TYText>{`This is ${item}`}</TYText>",
+      "      </View>",
+      "    </Tab.TabPane>",
+      "  ))}",
+      "</Tab>"
+    ],
+    "description": "用于让用户在不同的视图中进行切换"
+  },
+  "TabBar 标签栏拆分版": {
+    "prefix": "tuya-tabBar",
+    "body": [
+      "<TabBar",
+      "  tabs={Array.from(Array(10), (v, k) => k + 1).map(v => {",
+      "    return { key: `${v}`, title: `Tab${v}` };",
+      "  })}",
+      "  onChange={value => console.log(value)}",
+      "/>"
+    ],
+    "description": "TabBar 标签栏拆分版"
+  },
+  "Tabs 纯手势标签栏": {
+    "prefix": "ty-tabs",
+    "body": [
+      "<Tabs",
+      "  dataSource={[",
+      "    { value: '1', label: '探测器' },",
+      "    { value: '2', label: '遥控器' },",
+      "    { value: '3', label: '模拟器' },",
+      "    { value: '4', label: '有限探测器' },",
+      "  ]}",
+      "  onChange={tab => console.log({ activeKey1: tab.value })}",
+      "/>"
+    ],
+    "description": "Tabs 纯手势标签栏"
   }
 }
