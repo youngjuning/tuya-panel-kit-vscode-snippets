@@ -36,7 +36,7 @@
     "description": "Motion 是一个用于丰富组件动作的组件"
   },
   "Motion.PullUp 上拉下滑": {
-    "prefix": "ty-motion-fade",
+    "prefix": "ty-motion-pullUp",
     "body": [
       "<Motion.PullUp",
       "  show={$1}",
@@ -55,7 +55,14 @@
       "  onHide={() =>{",
       "    $1",
       "  }}",
-      "/>"
+      "  <View",
+      "    style={{",
+      "      width: 375,",
+      "      height: 200,",
+      "      backgroundColor: '#f0f',",
+      "    }} ",
+      "  />",
+      "</Motion.ScaleFadeIn>"
     ],
     "description": "Motion 是一个用于丰富组件动作的组件"
   },
@@ -67,31 +74,52 @@
       "  onHide={() =>{",
       "    $2",
       "  }}",
-      "/>"
+      "  <View",
+      "    style={{",
+      "      width: 375,",
+      "      height: 200,",
+      "      backgroundColor: '#f0f',",
+      "    }} ",
+      "  />",
+      "</Motion.ScalePullDown>"
     ],
     "description": "Motion 是一个用于丰富组件动作的组件"
   },
   "Motion.PushDown 下拉上推": {
-    "prefix": "ty-motion-scalePullDown",
+    "prefix": "ty-motion-pushDown",
     "body": [
       "<Motion.PushDown",
       "  show={$1}",
       "  onHide={() =>{",
       "    $2",
       "  }}",
-      "/>"
+      "  <View",
+      "    style={{",
+      "      width: 375,",
+      "      height: 200,",
+      "      backgroundColor: '#f0f',",
+      "    }} ",
+      "  />",
+      "</Motion.ScalePullDown>"
     ],
     "description": "Motion 是一个用于丰富组件动作的组件"
   },
   "Motion.Toast 无操作放大淡入/缩小淡出": {
-    "prefix": "ty-motion-scalePullDown",
+    "prefix": "ty-motion-toast",
     "body": [
       "<Motion.Toast",
       "  show={$1}",
       "  onHide={() =>{",
       "    $2",
       "  }}",
-      "/>"
+      "  <View",
+      "    style={{",
+      "      width: 375,",
+      "      height: 200,",
+      "      backgroundColor: '#f0f',",
+      "    }} ",
+      "  />",
+      "</Motion.Toast>"
     ],
     "description": "Motion 是一个用于丰富组件动作的组件"
   },
@@ -249,14 +277,14 @@
     ],
     "description": "非受控输入框"
   },
-  "Dialog.checkbox 单选对话框": {
-    "prefix": "ty-dialog-checkbox-radio",
+  "Dialog.checkbox 选择对话框": {
+    "prefix": "ty-dialog-checkbox",
     "body": [
       "Dialog.checkbox({",
       "  title: '${1:Required}',",
       "  cancelText: '取消',",
       "  confirmText: '确认',",
-      "  type: 'radio',",
+      "  type: '${2|radio,switch|',",
       "  dataSource: [",
       "    {",
       "      value: 'code1',",
@@ -281,54 +309,7 @@
       "  },",
       "});"
     ],
-    "description": "单选对话框"
-  },
-  "Dialog.checkbox 多选对话框": {
-    "prefix": "ty-dialog-checkbox-switch",
-    "body": [
-      "Dialog.checkbox({",
-      "  title: '${1:Required}',",
-      "  cancelText: '取消',",
-      "  confirmText: '确认',",
-      "  type: 'switch',",
-      "  dataSource: [",
-      "    {",
-      "      value: 'code1',",
-      "      title: '传感器选择',",
-      "    },",
-      "    {",
-      "      value: 'code2',",
-      "      title: '房间传感器校准',",
-      "    },",
-      "    {",
-      "      value: 'code3',",
-      "      title: '地板传感器校准',",
-      "    },",
-      "    {",
-      "      value: 'code4',",
-      "      title: '自适应功能',",
-      "    },",
-      "    {",
-      "      value: 'code5',",
-      "      title: '防冻保护功能',",
-      "      iconSize: 20,",
-      "      Icon: 'warning',",
-      "      reverse: true,",
-      "      hideOnUnselect: true,",
-      "    },",
-      "    {",
-      "      value: 'code6',",
-      "      title: '测试滚动功能',",
-      "      reverse: true,",
-      "    },",
-      "  ],",
-      "  onConfirm: (value, { close }) => {",
-      "    console.log(value)",
-      "    close();",
-      "  },",
-      "});"
-    ],
-    "description": "多选对话框"
+    "description": "选择对话框"
   },
   "Dialog.list 列表对话框": {
     "prefix": "ty-dialog-list",
@@ -677,7 +658,7 @@
     ],
     "description": "自定义弹出层"
   },
-  "Toast 弹出层": {
+  "Popup.toast 弹出层": {
     "prefix": "ty-popup-toast",
     "body": [
       "Popup.toast({",
@@ -743,9 +724,9 @@
     "description": "一个仿 IOS 样式的侧滑操作组件"
   },
   "Toast.Success 吐司": {
-    "prefix": "ty-toast-success",
+    "prefix": "ty-toast",
     "body": [
-      "<Toast.Success text=\"${1:成功文案}\" show={${2:successShow}} onFinish={() => ${3:setSuccessShow(false)}} />"
+      "<Toast${1|.Success,.Warning,.Error,.Loading,|} text=\"${2:文案}\" show={${3:successShow}} onFinish={() => ${4:setSuccessShow(false)}} />"
     ],
     "description": "用于提醒用户，不打断操作"
   },

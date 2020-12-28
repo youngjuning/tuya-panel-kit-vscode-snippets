@@ -10,6 +10,10 @@
     "categories": [
         "Snippets"
     ],
+    "repository": {
+        "type": "github",
+        "url": "https://github.com/youngjuning/https://github.com/youngjuning/tuya-panel-kit-vscode-snippets"
+    },
     "publisher": "youngjuning",
     "contributes": {
         "snippets": [
@@ -18,5 +22,8 @@
                 "path": "./snippets/tuya.code-snippets"
             }
         ]
+    },
+    "scripts": {
+        "package": "npx vsce package"
     }
 }
