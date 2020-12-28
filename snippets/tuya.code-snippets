@@ -748,5 +748,226 @@
       "<Toast.Success text=\"${1:成功文案}\" show={${2:successShow}} onFinish={() => ${3:setSuccessShow(false)}} />"
     ],
     "description": "用于提醒用户，不打断操作"
+  },
+  // Presentation
+  "Carousel 轮播": {
+    "prefix": "tuya-carousel",
+    "body": [
+      "<Carousel",
+      "  style={{ height: 200 }}",
+      "  selectedIndex={0}",
+      "  autoplay={true}",
+      "  loop={true}",
+      "  carouselChange={index => console.log(index)}",
+      ">",
+      "  <View style={{ height: 200, backgroundColor: 'red' }}>",
+      "    <TYText style={{ color: '#333' }}>Carousel 1</TYText>",
+      "  </View>",
+      "  <View style={{ height: 200, backgroundColor: 'blue' }}>",
+      "    <TYText style={{ color: '#333' }}>Carousel 2</TYText>",
+      "  </View>",
+      "  <View style={{ height: 200, backgroundColor: 'yellow' }}>",
+      "    <TYText style={{ color: '#333' }}>Carousel 3</TYText>",
+      "  </View>",
+      "</Carousel>"
+    ],
+    "description": "Carousel 是一个轮播图组件"
+  },
+  "CircleView 圆形视图": {
+    "prefix": "tuya-circleView",
+    "body": [
+      "<CircleView radius={30} color=\"#ff0\" borderWidth={4} borderColor=\"#00f\" />"
+    ],
+    "description": "CircleView 为圆形视图"
+  },
+  "Collapsible 折叠": {
+    "prefix": "tuya-collapsible",
+    "body": [
+      "<Collapsible",
+      "  collapsed={${1:collapsed}}",
+      "  align=\"top\"",
+      "  style={{",
+      "    width: 375,",
+      "    height: 260,",
+      "    backgroundColor: '#ff0',",
+      "    justifyContent: 'center',",
+      "    alignItems: 'center',",
+      "  }}",
+      ">",
+      "  <View",
+      "    style={{",
+      "      width: 308,",
+      "      height: 185,",
+      "      borderRadius: 28,",
+      "      backgroundColor: '#ddd',",
+      "      justifyContent: 'center',",
+      "      alignItems: 'center',",
+      "    }}",
+      "  >",
+      "    <TYText",
+      "      style={{",
+      "        textAlign: 'center',",
+      "        color: '#666',",
+      "        fontSize: 20,",
+      "      }}",
+      "      text=\"Talk is cheap, show me the code.\"",
+      "    />",
+      "  </View>",
+      "</Collapsible>"
+    ],
+    "description": "用于展示一个折叠下拉的动画效果"
+  },
+  "Divider 分割线": {
+    "prefix": "tuya-divider",
+    "body": [
+      "<Divider color=\"red\" width={300} />"
+    ],
+    "description": "Divider 分割线"
+  },
+  "LinearGradient 垂直两段渐变": {
+    "prefix": "tuya-linearGradient-verticle",
+    "body": [
+      "<LinearGradient",
+      "  gradientId=\"Gradient1\"",
+      "  style={{",
+      "    width: 300,",
+      "    height: 200,",
+      "    marginLeft: 20,",
+      "    marginVertical: 20,",
+      "  }}",
+      "  x1=\"0%\"",
+      "  y1=\"0%\"",
+      "  x2=\"0%\"",
+      "  y2=\"100%\"",
+      "  stops={{",
+      "    '0%': 'red',",
+      "    '100%': 'yellow',",
+      "  }}",
+      ">",
+      "  <Rect width={300} height={200} />",
+      "</LinearGradient>"
+    ],
+    "description": "垂直两段渐变"
+  },
+  "LinearGradient 斜向三段渐变": {
+    "prefix": "tuya-linearGradient-oblique",
+    "body": [
+      "<LinearGradient",
+      "  gradientId=\"Gradient2\"",
+      "  style={{ width: 300, height: 200, marginLeft: 20, marginVertical: 20 }}",
+      "  x1=\"100%\"",
+      "  y1=\"0%\"",
+      "  x2=\"0%\"",
+      "  y2=\"100%\"",
+      "  stops={{",
+      "    '0%': 'red',",
+      "    '30%': 'blue',",
+      "    '100%': 'yellow',",
+      "  }}",
+      ">",
+      "  <Rect width={300} height={200} />",
+      "</LinearGradient>"
+    ],
+    "description": "斜向三段渐变"
+  },
+  "Progress 进度条": {
+    "prefix": "tuya-progress",
+    "body": [
+      "<Progress",
+      "  foreColor={{",
+      "    '0%': '#1381FB',",
+      "    '100%': '#00C36C',",
+      "  }}",
+      "  style={{ width: 100, height: 100 }}",
+      "  needMaxCircle={true}",
+      "  startColor=\"#1381FB\"",
+      "  thumbRadius={4}",
+      "  value={50}",
+      "  startDegree={135}",
+      "  andDegree={270}",
+      "/>"
+    ],
+    "description": "一个常用的组件，可以手势控制当前进度，也可仅作展示作用"
+  },
+  "RadialGradient 径向渐变": {
+    "prefix": "tuya-radialGradient",
+    "body": [
+      "<RadialGradient",
+      "  gradientId=\"Gradient1\"",
+      "  style={{ width: 300, height: 200, marginLeft: 10 }}",
+      "  stops={[",
+      "    {",
+      "      offset: '0%',",
+      "      stopColor: '#ff0',",
+      "      stopOpacity: '1',",
+      "    },",
+      "    {",
+      "      offset: '100%',",
+      "      stopColor: '#00f',",
+      "      stopOpacity: '1',",
+      "    },",
+      "  ]}",
+      "  rx=\"50%\"",
+      "  ry=\"50%\"",
+      "  fx=\"50%\"",
+      "  fy=\"50%\"",
+      "  cx=\"50%\"",
+      "  cy=\"50%\"",
+      "/>"
+    ],
+    "description": "RadialGradient 径向渐变"
+  },
+  "RotationView 旋转视图": {
+    "prefix": "tuya-rotationView",
+    "body": [
+      "<RotationView",
+      "  style={{ width: 160, height: 160, marginLeft: 100, marginTop: 40 }}",
+      "  active={true}",
+      ">",
+      "  <View",
+      "    style={{",
+      "      width: 140,",
+      "      height: 140,",
+      "      backgroundColor: 'red',",
+      "      justifyContent: 'center',",
+      "    }}",
+      "  >",
+      "    <TYText style={{ textAlign: 'center' }}>Rotation!!!</TYText>",
+      "  </View>",
+      "</RotationView>"
+    ],
+    "description": "RotationView 封装了需要旋转动画的视图容器"
+  },
+  "TYFlatList 列表": {
+    "prefix": "tuya-flatList",
+    "body": [
+      "<TYFlatList data={${1:[]}} />"
+    ],
+    "description": "基于 RN 自带的 FlatList 组件做了一层简单的封装"
+  },
+  "TYListItem 列表项": {
+    "prefix": "tuya-listItem",
+    "body": [
+      "<TYListItem",
+      "  theme={{",
+      "    fontColor: '#fff',",
+      "    subFontColor: '#999',",
+      "    descFontColor: 'red',",
+      "    cellBg: '#222',",
+      "  }}",
+      "  title=\"标题\"",
+      "  subTitle=\"副标题\"",
+      "  Action=\"Action\"",
+      "  onPress={() => console.log('clicked')}",
+      "/>"
+    ],
+    "description": "TYListItem 是一个列表项组件"
+  },
+  "TYSectionList 分组列表": {
+    "prefix": "tuya-sectionList",
+    "body": [
+      "<TYSectionList sections={[]} />"
+    ],
+    "description": "基于 RN 自带的 SectionList 组件做了一层简单的封装"
   }
 }
