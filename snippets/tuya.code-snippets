@@ -190,12 +190,563 @@
     "description": "SwitchButton 是一个开关组件"
   },
   "TimerPicker 时间段选择器": {
-    "prefix": "ty-switchButton",
+    "prefix": "ty-timerPicker",
     "body": [
-      "<SwitchButton",
-      "  onValueChange={v => console.log(v)}",
+      "<TimerPicker",
+      "  startTime={0}",
+      "  endTime={0}",
+      "  onTimerChange={(startTime, endTime) => console.log({ startTime, endTime })}",
       "/>"
     ],
-    "description": "TimerPicker 是一个时间段选择组件"
+    "description": "TimerPicker 时间段选择器"
+  },
+  // Feedback
+  "Dialog.alert 对话框": {
+    "prefix": "ty-dialog-alert",
+    "body": [
+      "Dialog.alert({",
+      "  title: '${1:标题}',",
+      "  subTitle: '${2:副标题}',",
+      "  confirmText: '${3:确认}',",
+      "  onConfirm: (data, { close }) => {",
+      "    $4",
+      "    close();",
+      "  },",
+      "});"
+    ],
+    "description": "警告框"
+  },
+  "Dialog.confirm 提示框": {
+    "prefix": "ty-dialog-confirm",
+    "body": [
+      "Dialog.confirm({",
+      "  title: '${1:标题}',",
+      "  subTitle: '${2:副标题}',",
+      "  cancelText: '${3:取消}',",
+      "  confirmText: '${4:确认}',",
+      "  onConfirm: (data, { close }) => {",
+      "    $5",
+      "    close();",
+      "  },",
+      "});"
+    ],
+    "description": "提示框"
+  },
+  "Dialog.prompt 输入对话框": {
+    "prefix": "ty-dialog-prompt",
+    "body": [
+      "Dialog.prompt({",
+      "  title: '${1:输入框}',",
+      "  subTitle: '${2:副标题}',",
+      "  cancelText: '${3:取消}',",
+      "  confirmText: '${4:确认}',",
+      "  placeholder: '${5:Password}',",
+      "  onConfirm: (text, { close }) => {",
+      "    console.log(text)",
+      "    close();",
+      "  },",
+      "});"
+    ],
+    "description": "非受控输入框"
+  },
+  "Dialog.checkbox 单选对话框": {
+    "prefix": "ty-dialog-checkbox-radio",
+    "body": [
+      "Dialog.checkbox({",
+      "  title: '${1:Required}',",
+      "  cancelText: '取消',",
+      "  confirmText: '确认',",
+      "  type: 'radio',",
+      "  dataSource: [",
+      "    {",
+      "      value: 'code1',",
+      "      title: '传感器选择',",
+      "    },",
+      "    {",
+      "      value: 'code2',",
+      "      title: '房间传感器校准',",
+      "    },",
+      "    {",
+      "      value: 'code3',",
+      "      title: '地板传感器校准',",
+      "      iconSize: 24,",
+      "      Icon: 'warning',",
+      "      reverse: true,",
+      "      hideOnUnselect: true,",
+      "    },",
+      "  ],",
+      "  onConfirm: (value, { close }) => {",
+      "    console.log(value)",
+      "    close();",
+      "  },",
+      "});"
+    ],
+    "description": "单选对话框"
+  },
+  "Dialog.checkbox 多选对话框": {
+    "prefix": "ty-dialog-checkbox-switch",
+    "body": [
+      "Dialog.checkbox({",
+      "  title: '${1:Required}',",
+      "  cancelText: '取消',",
+      "  confirmText: '确认',",
+      "  type: 'switch',",
+      "  dataSource: [",
+      "    {",
+      "      value: 'code1',",
+      "      title: '传感器选择',",
+      "    },",
+      "    {",
+      "      value: 'code2',",
+      "      title: '房间传感器校准',",
+      "    },",
+      "    {",
+      "      value: 'code3',",
+      "      title: '地板传感器校准',",
+      "    },",
+      "    {",
+      "      value: 'code4',",
+      "      title: '自适应功能',",
+      "    },",
+      "    {",
+      "      value: 'code5',",
+      "      title: '防冻保护功能',",
+      "      iconSize: 20,",
+      "      Icon: 'warning',",
+      "      reverse: true,",
+      "      hideOnUnselect: true,",
+      "    },",
+      "    {",
+      "      value: 'code6',",
+      "      title: '测试滚动功能',",
+      "      reverse: true,",
+      "    },",
+      "  ],",
+      "  onConfirm: (value, { close }) => {",
+      "    console.log(value)",
+      "    close();",
+      "  },",
+      "});"
+    ],
+    "description": "多选对话框"
+  },
+  "Dialog.list 列表对话框": {
+    "prefix": "ty-dialog-list",
+    "body": [
+      "Dialog.list({",
+      "  title: '${1:这是标题}',",
+      "  subTitle: '${2:这是内容}',",
+      "  dataSource: new Array(6).fill(1).map((_, idx) => ({",
+      "    title: idx === 0 ? '点我关闭' : `选项${idx}`,",
+      "    onPress: () => {",
+      "      idx === 0 && Dialog.close();",
+      "      console.log('Press', idx);",
+      "    },",
+      "  })),",
+      "  cancelText: '取消',",
+      "  confirmText: '确认',",
+      "  onConfirm: (data, { close }) => {",
+      "    console.log(data)",
+      "    close();",
+      "  },",
+      "});"
+    ],
+    "description": "列表对话框"
+  },
+  "Dialog.custom 自定义对话框": {
+    "prefix": "ty-dialog-custom",
+    "body": [
+      "Dialog.custom({",
+      "  title: 'Custom',",
+      "  cancelText: '取消',",
+      "  confirmText: '确认',",
+      "  content: (",
+      "    <View style={{ height: 300, alignItems: 'center', justifyContent: 'center' }}>",
+      "      <Text style={{ fontSize: 32, color: '#000' }}>自定义内容</Text>",
+      "    </View>",
+      "  ),",
+      "  onConfirm: (data, { close }) => {",
+      "    console.log(data)",
+      "    close();",
+      "  },",
+      "});"
+    ],
+    "description": "列表对话框"
+  },
+  "GlobalToast 全局吐司": {
+    "prefix": "ty-globalToast",
+    "body": [
+      "GlobalToast.show({",
+      "  text: '${1:设置成功}',",
+      "  onFinish: () => {",
+      "    $2",
+      "    console.log('Toast结束');",
+      "    GlobalToast.hide();",
+      "  },",
+      "});"
+    ],
+    "description": "GlobalToast 是一个挂载在 FullView 上伴有淡入淡出动画效果的全局提示"
+  },
+  "Modal 遮罩": {
+    "prefix": "ty-modal",
+    "body": [
+      "<Modal visible={ false } onMaskPress={() => console.log('modal closed')}>",
+      "  <TYText style={textStyle} text=\"我是遮罩\" />",
+      "</Modal>"
+    ],
+    "description": "基础使用"
+  },
+  "Modal.Countdown 倒计时弹出层": {
+    "prefix": "ty-modal-countdown",
+    "body": [
+      "<Modal.Countdown",
+      "  visible={false}",
+      "  onMaskPress={() => {}}",
+      "  onCancel={() => {}}",
+      "  onConfirm={() => {}}",
+      "  title=\"倒计时\"",
+      "  cancelText=\"取消\"",
+      "  confirmText=\"确认\"",
+      "  hourText=\"小时\"",
+      "  minuteText=\"分钟\"",
+      "/>"
+    ],
+    "description": "Modal 倒计时弹出层"
+  },
+  "Modal.DatePicker 日期选择弹出层": {
+    "prefix": "ty-modal-datePicker",
+    "body": [
+      "<Modal.DatePicker",
+      "  visible={false}",
+      "  onMaskPress={() => {}}",
+      "  onCancel={() => {}}",
+      "  onConfirm={() => {}}",
+      "  title=\"生日\"",
+      "  cancelText=\"取消\"",
+      "  confirmText=\"确认\"",
+      "  hourText=\"小时\"",
+      "  minuteText=\"分钟\"",
+      "  mode=\"datetime\"",
+      "  minDate={new Date(1918, 0, 1, 0, 0, 0)}",
+      "  maxDate={new Date(2018, 11, 31, 23, 59, 59)}",
+      "/>"
+    ],
+    "description": "日期选择弹出层"
+  },
+  "Modal.List 列表选择弹出层": {
+    "prefix": "ty-modal-list",
+    "body": [
+      "<Modal.List",
+      "  visible={false}",
+      "  dataSource={[",
+      "    {",
+      "      label: '1',",
+      "      value: '1',",
+      "    },",
+      "    {",
+      "      label: '2',",
+      "      value: '2',",
+      "    },",
+      "  ]}",
+      "  type=\"${1|radio, switch|}\"",
+      "  onMaskPress={() => {}}",
+      "  onCancel={() => {}}",
+      "  onConfirm={() => {}}",
+      "/>"
+    ],
+    "description": "列表选择弹出层"
+  },
+  "Modal.Picker 选择弹出层": {
+    "prefix": "ty-modal-picker",
+    "body": [
+      "<Modal.Picker",
+      "  visible={false}",
+      "  dataSource={[",
+      "    {",
+      "      label: '1',",
+      "      value: '1',",
+      "    },",
+      "    {",
+      "      label: '2',",
+      "      value: '2',",
+      "    },",
+      "  ]}",
+      "  label=\"tuya\"",
+      "  onMaskPress={() => {}}",
+      "  onCancel={() => {}}",
+      "  onConfirm={() => {}}",
+      "  onValueChange={value => console.log('onValueChange', value)}",
+      "/>"
+    ],
+    "description": "Picker 选择弹出层"
+  },
+  "Notification 全局通知": {
+    "prefix": "ty-notification",
+    "body": [
+      "Notification.show({",
+      "  message: '${1:警告提示框}',",
+      "  onClose: () => {",
+      "    Notification.hide();",
+      "  },",
+      "  theme: {",
+      "    successIcon: 'red',",
+      "    errorIcon: 'yellow',",
+      "    warningIcon: 'black',",
+      "  },",
+      "});"
+    ],
+    "description": "通知栏，可以显示成功、警告、错误此类三种信息"
+  },
+  "NotificationLegacy 通知栏": {
+    "prefix": "ty-notificationLegacy",
+    "body": [
+      "<NotificationLegacy message=\"${1:I am Notification}\" />"
+    ],
+    "description": "通知栏，可以显示成功、警告、错误此类三种信息"
+  },
+  "Popup.countdown 倒计时弹出层": {
+    "prefix": "tuya-popup-countdown",
+    "body": [
+      "Popup.countdown({",
+      "  title: '倒计时',",
+      "  cancelText: '取消',",
+      "  confirmText: '确认',",
+      "  hourText: '小时',",
+      "  minuteText: '分钟',",
+      "  onMaskPress: ({ close }) => close(),",
+      "  onConfirm: (data, { close }) => {",
+      "    console.log({ countdown: data.hour * 60 + data.minute });",
+      "    close();",
+      "  },",
+      "});"
+    ],
+    "description": "倒计时弹出层"
+  },
+  "Popup.datePicker 日期选择弹出层": {
+    "prefix": "tuya-popup-datePicker",
+    "body": [
+      "Popup.datePicker({",
+      "  title: '生日',",
+      "  cancelText: '取消',",
+      "  confirmText: '确认',",
+      "  hourText: '小时',",
+      "  minuteText: '分钟',",
+      "  defaultDate: new Date(),",
+      "  mode: 'datetime',",
+      "  minDate: new Date(1918, 0, 1, 0, 0, 0),",
+      "  maxDate: new Date(2018, 11, 31, 23, 59, 59),",
+      "  onMaskPress: ({ close }) => close(),",
+      "  onConfirm: (date, { close }) => {",
+      "    console.log(date)",
+      "    close();",
+      "  },",
+      "});"
+    ],
+    "description": "日期选择弹出层"
+  },
+  "Popup.timerPicker 时间段选择": {
+    "prefix": "tuya-popup-timerPicker",
+    "body": [
+      "Popup.timerPicker({",
+      "  title: '时间段选择',",
+      "  cancelText: '取消',",
+      "  confirmText: '确认',",
+      "  startTime: 0,",
+      "  endTime: 0,",
+      "  is12Hours: true,",
+      "  onMaskPress: ({ close }) => close(),",
+      "  onConfirm: ({ startTime, endTime }, { close }) => {",
+      "    console.log({ timerPickerValue: [startTime, endTime] });",
+      "    close();",
+      "  },",
+      "});"
+    ],
+    "description": "时间段选择"
+  },
+  "Popup.numberSelector 数值选择弹出层": {
+    "prefix": "tuya-popup-numberSelector",
+    "body": [
+      "Popup.numberSelector({",
+      "  title: '温度调节 (℃)',",
+      "  cancelText: '取消',",
+      "  confirmText: '确认',",
+      "  min: 0,",
+      "  max: 50,",
+      "  onMaskPress: ({ close }) => close(),",
+      "  onConfirm: (value, { close }) => {",
+      "    console.log({ numberValue: value });",
+      "    close();",
+      "  },",
+      "});"
+    ],
+    "description": "数值选择弹出层"
+  },
+  "Popup.list 列表选择弹出层": {
+    "prefix": "tuya-popup-list",
+    "body": [
+      "Popup.list({",
+      "  type: '${1|radio,switch|}',",
+      "  maxItemNum: 7,",
+      "  dataSource: [",
+      "    {",
+      "      key: '0',",
+      "      title: '0',",
+      "      value: '0'",
+      "    },",
+      "    {",
+      "      key: '1',",
+      "      title: '1',",
+      "      value: '1'",
+      "    },",
+      "    {",
+      "      key: '2',",
+      "      title: '2',",
+      "      value: '2'",
+      "    },",
+      "    {",
+      "      key: '3',",
+      "      title: '3',",
+      "      value: '3'",
+      "    },",
+      "  ],",
+      "  title: '${2:请选择}',",
+      "  subTitle: '${3:副标题}',",
+      "  cancelText: '取消',",
+      "  confirmText: '确认',",
+      "  onMaskPress: ({ close }) => close(),",
+      "  onSelect: (value, { close }) => {",
+      "    console.log({ listValue: value });",
+      "    close();",
+      "  },",
+      "});"
+    ],
+    "description": "列表选择弹出层"
+  },
+  "Popup.picker Picker 选择弹出层": {
+    "prefix": "tuya-popup-picker",
+    "body": [
+      "Popup.picker({",
+      "  dataSource: [",
+      "    {",
+      "      label: '1',",
+      "      value: '1',",
+      "    },",
+      "    {",
+      "      label: '2',",
+      "      value: '2',",
+      "    },",
+      "  ],",
+      "  singlePicker: ${1|true,false|},",
+      "  title: 'Picker',",
+      "  cancelText: '取消',",
+      "  confirmText: '确认',",
+      "  label: 'tuya',",
+      "  onMaskPress: ({ close }) => close(),",
+      "  onConfirm: (value, idx, { close }) => {",
+      "    console.log({ pickerValue: value });",
+      "    close();",
+      "  },",
+      "});"
+    ],
+    "description": "Picker 选择弹出层"
+  },
+  "Popup.custom 自定义弹出层": {
+    "prefix": "tuya-popup-custom",
+    "body": [
+      "Popup.custom({",
+      "  content: (",
+      "    <View",
+      "      style={{",
+      "        height: 200,",
+      "        alignItems: 'center',",
+      "        justifyContent: 'center',",
+      "        backgroundColor: '#fff',",
+      "      }}",
+      "    >",
+      "      <Text style={{ fontSize: 36, color: '#000' }}>Custom Content</Text>",
+      "    </View>",
+      "  ),",
+      "  title: 'Custom',",
+      "  cancelText: '取消',",
+      "  confirmText: '确认',",
+      "  onMaskPress: ({ close }) => close(),",
+      "  onConfirm: (data, { close }) => {",
+      "    close();",
+      "  },",
+      "});"
+    ],
+    "description": "自定义弹出层"
+  },
+  "Toast 弹出层": {
+    "prefix": "tuya-popup-toast",
+    "body": [
+      "Popup.toast({",
+      "  message: 'I am Toast',",
+      "});"
+    ],
+    "description": "Toast 弹出层"
+  },
+  "Swipeout 左侧滑": {
+    "prefix": "ty-swipeout-left",
+    "body": [
+      "<Swipeout",
+      "  autoClose={true}",
+      "  left={[",
+      "    {",
+      "      text: 'action',",
+      "      type: 'primary',",
+      "      fontStyle: { color: '#fff', fontSize: 16 },",
+      "    },",
+      "  ]}",
+      ">",
+      "  <View",
+      "    style={{",
+      "      height: 44,",
+      "      backgroundColor: '#f99',",
+      "      justifyContent: 'center',",
+      "      alignItems: 'center',",
+      "      paddingHorizontal: 16,",
+      "    }}",
+      "  >",
+      "    <TYText style={{ color: '#333' }}>${1:试试左滑}</TYText>",
+      "  </View>",
+      "</Swipeout>"
+    ],
+    "description": "一个仿 IOS 样式的侧滑操作组件"
+  },
+  "Swipeout 右侧滑": {
+    "prefix": "ty-swipeout-right",
+    "body": [
+      "<Swipeout",
+      "  autoClose={true}",
+      "  right={[",
+      "    {",
+      "      text: 'delete',",
+      "      type: 'delete',",
+      "      fontStyle: { color: '#fff', fontSize: 16 },",
+      "    },",
+      "  ]}",
+      ">",
+      "  <View",
+      "    style={{",
+      "      height: 44,",
+      "      backgroundColor: '#66f',",
+      "      justifyContent: 'center',",
+      "      alignItems: 'center',",
+      "      paddingHorizontal: 16,",
+      "    }}",
+      "  >",
+      "    <TYText style={{ color: '#333' }}>${1:试试右滑}</TYText>",
+      "  </View>",
+      "</Swipeout>"
+    ],
+    "description": "一个仿 IOS 样式的侧滑操作组件"
+  },
+  "Toast.Success 吐司": {
+    "prefix": "ty-toast-success",
+    "body": [
+      "<Toast.Success text=\"${1:成功文案}\" show={${2:successShow}} onFinish={() => ${3:setSuccessShow(false)}} />"
+    ],
+    "description": "用于提醒用户，不打断操作"
   }
 }
