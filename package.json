@@ -2,7 +2,7 @@
     "name": "tuya-panel-kit-snippets",
     "displayName": "Tuya Panel Kit Snippets",
     "description": "This is Code Snippets of tuya-panel-kit for VS Code.",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "icon": "images/logo.png",
     "engines": {
         "vscode": "^1.34.0"
