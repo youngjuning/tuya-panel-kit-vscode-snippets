@@ -20,6 +20,10 @@
             {
                 "language": "typescriptreact",
                 "path": "./snippets/tuya.code-snippets"
+            },
+            {
+                "language": "javascriptreact",
+                "path": "./snippets/tuya.code-snippets"
             }
         ]
     },
