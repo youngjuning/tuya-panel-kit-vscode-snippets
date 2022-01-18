@@ -14,7 +14,7 @@
         "type": "github",
         "url": "https://github.com/youngjuning/tuya-panel-kit-vscode-snippets"
     },
-    "publisher": "youngjuning",
+    "publisher": "tuya",
     "contributes": {
         "snippets": [
             {
